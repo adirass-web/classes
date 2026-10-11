@@ -1,0 +1,17 @@
+.cyber-acq { font-family: Arial, "Noto Sans Hebrew", sans-serif; font-size: 1rem; line-height: 1.7; letter-spacing: normal; text-align: start; color: #172b3a; max-inline-size: 58rem; margin-inline: auto; }
+.cyber-acq *, .cyber-acq *::before, .cyber-acq *::after { box-sizing: border-box; }
+.cyber-acq .acq-card, .cyber-acq.acq-card { background: #fff; border: 1px solid #c9d5dd; border-radius: .75rem; padding: 1.25rem; margin-block: 1rem; }
+.cyber-acq h2 { font-size: 1.5rem; line-height: 1.4; margin-block: 0 .75rem; }
+.cyber-acq h3 { font-size: 1.12rem; line-height: 1.5; margin-block: 0 .4rem; }
+.cyber-acq p { margin-block: .4rem .8rem; }
+.cyber-acq .acq-note { background: #edf4f7; border-inline-start: .25rem solid #28627a; padding: .8rem 1rem; border-radius: .25rem; margin-block: 1rem; }
+.cyber-acq .acq-field { margin-block: 1.25rem; min-inline-size: 0; }
+.cyber-acq .acq-hint, .cyber-acq .acq-meta { color: #425b6b; }
+.cyber-acq .acq-answer { overflow-wrap: anywhere; white-space: pre-wrap; }
+.cyber-acq .acq-answer p { white-space: normal; }
+.cyber-acq input[type="text"], .cyber-acq textarea { inline-size: 100%; max-inline-size: 100%; font: inherit; unicode-bidi: plaintext; }
+.cyber-acq .acq-field > div, .cyber-acq .acq-field .d-inline-flex { max-inline-size: 100%; inline-size: 100%; }
+.cyber-acq .acq-actions { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-block-start: 1rem; }
+.cyber-acq a { color: #185675; text-decoration: underline; text-underline-offset: .15em; }
+.cyber-acq a:focus-visible { outline: 3px solid #28627a; outline-offset: 3px; }
+@media (max-width: 480px) { .cyber-acq .acq-card, .cyber-acq.acq-card { padding: .85rem; } }
