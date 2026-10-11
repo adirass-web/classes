@@ -17,6 +17,31 @@ SETTING_NAMES = {'intro', 'comments', 'requiredentries', 'requiredentriestoview'
 
 
 class PresetTests(unittest.TestCase):
+    def test_site_export_variant(self):
+        native_order = ['listtemplate.html', 'singletemplate.html', 'asearchtemplate.html',
+                        'addtemplate.html', 'rsstemplate.html', 'csstemplate.css', 'jstemplate.js',
+                        'listtemplateheader.html', 'listtemplatefooter.html', 'rsstitletemplate.html', 'preset.xml']
+        for slug in ('intro-cyber', 'fifth-dimension'):
+            with self.subTest(course=slug), ZipFile(ROOT / f'{slug}-acquaintance-site.zip') as z, TemporaryDirectory() as d:
+                self.assertEqual(z.namelist(), native_order)
+                self.assertIsNone(z.testzip())
+                z.extractall(d)
+                for name in native_order:
+                    self.assertEqual((Path(d) / name).read_bytes(), z.read(name))
+                self.assertEqual(z.read('jstemplate.js'), b'')
+                self.assertEqual(z.read('listtemplatefooter.html'), b'</div>\n')
+                root = ET.fromstring(z.read('preset.xml'))
+                self.assertEqual(root.findtext('settings/manageapproved'), '1')
+                self.assertEqual(root.findtext('settings/defaultsort'), '0')
+                self.assertEqual(root.findtext('settings/comments'), '1')
+                self.assertEqual(root.findtext('settings/maxentries'), '1')
+                fields = root.findall('field')
+                self.assertEqual(len(fields), 7)
+                names = [f.findtext('name') for f in fields]
+                for template in ('addtemplate.html', 'listtemplate.html', 'singletemplate.html'):
+                    self.assertCountEqual(re.findall(r'\[\[(.*?)\]\]', z.read(template).decode()), names)
+                self.assertEqual([f.findtext('name') for f in fields if f.findtext('required') == '0'], ['מחוץ לעבודה'])
+
     def test_compatible_zip_extraction(self):
         for slug in ('intro-cyber', 'fifth-dimension'):
             with self.subTest(course=slug), TemporaryDirectory() as directory:
