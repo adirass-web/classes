@@ -4,7 +4,8 @@ from pathlib import Path
 import re
 import unittest
 import xml.etree.ElementTree as ET
-from zipfile import ZipFile
+from zipfile import ZipFile, ZIP_STORED
+from tempfile import TemporaryDirectory
 
 ROOT = Path(__file__).resolve().parent
 EXPECTED = {'preset.xml', 'singletemplate.html', 'listtemplate.html',
@@ -16,6 +17,27 @@ SETTING_NAMES = {'intro', 'comments', 'requiredentries', 'requiredentriestoview'
 
 
 class PresetTests(unittest.TestCase):
+    def test_compatible_zip_extraction(self):
+        for slug in ('intro-cyber', 'fifth-dimension'):
+            with self.subTest(course=slug), TemporaryDirectory() as directory:
+                with ZipFile(ROOT / f'{slug}-acquaintance.zip') as original, ZipFile(ROOT / f'{slug}-acquaintance-v2.zip') as compatible:
+                    self.assertIsNone(compatible.testzip())
+                    self.assertEqual(set(compatible.namelist()), EXPECTED)
+                    for entry in compatible.infolist():
+                        self.assertEqual(entry.compress_type, ZIP_STORED)
+                        self.assertEqual(entry.create_system, 0)
+                        self.assertEqual(entry.external_attr, 0x20)
+                        self.assertFalse(entry.flag_bits & 1)  # Not encrypted.
+                        self.assertFalse(entry.is_dir())
+                        self.assertEqual(entry.extra, b'')
+                        self.assertEqual(compatible.read(entry), original.read(entry.filename))
+                    compatible.extractall(directory)
+                extracted = Path(directory)
+                self.assertEqual({p.name for p in extracted.iterdir()}, EXPECTED)
+                for p in extracted.iterdir():
+                    self.assertEqual(p.read_bytes(), (ROOT / 'sources' / slug / p.name).read_bytes())
+                self.assertEqual(len(ET.parse(extracted / 'preset.xml').findall('field')), 7)
+
     def test_import_contract(self):
         for slug in ('intro-cyber', 'fifth-dimension'):
             with self.subTest(course=slug), ZipFile(ROOT / f'{slug}-acquaintance.zip') as z:

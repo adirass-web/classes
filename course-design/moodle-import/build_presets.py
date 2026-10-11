@@ -4,7 +4,7 @@ from pathlib import Path
 from html import escape
 import re
 import xml.etree.ElementTree as ET
-from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
+from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED, ZIP_STORED
 
 ROOT = Path(__file__).resolve().parent
 COURSES = {
@@ -122,7 +122,20 @@ def build(slug, title, domains):
             info.compress_type = ZIP_DEFLATED
             info.external_attr = 0o100644 << 16
             archive.writestr(info, contents.encode('utf-8'))
+    # Alternate download for extraction problems: classic ZIP, stored entries,
+    # DOS regular-file attributes, ASCII filenames, no encryption or ZIP64.
+    # Keep the same eleven root entries required by the Moodle preset importer.
+    with ZipFile(ROOT / f'{slug}-acquaintance-v2.zip', 'w', compression=ZIP_STORED, allowZip64=False) as archive:
+        for filename, contents in files.items():
+            info = ZipInfo(filename, date_time=(2026, 1, 1, 0, 0, 0))
+            info.create_system = 0
+            info.create_version = 20
+            info.extract_version = 10
+            info.compress_type = ZIP_STORED
+            info.external_attr = 0x20  # DOS archive attribute; neither hidden nor a directory.
+            archive.writestr(info, contents.encode('utf-8'))
     print(f'Built {slug}-acquaintance.zip ({len(fields)} fields, {len(files)} files)')
+    print(f'Built {slug}-acquaintance-v2.zip (classic ZIP, uncompressed)')
 
 
 if __name__ == '__main__':
