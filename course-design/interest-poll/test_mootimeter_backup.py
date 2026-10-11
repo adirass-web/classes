@@ -7,7 +7,26 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parent / 'mootimeter-backup'
 
+def moodle_detects_backup(data):
+    """Port of Moodle 4.5 convert_helper::detect_moodle2_format's byte checks.
+
+    https://github.com/moodle/moodle/blob/MOODLE_405_STABLE/backup/util/helper/convert_helper.class.php
+    XML validity alone is insufficient: the declaration requires double quotes.
+    """
+    head = data[:200]
+    return (b'<?xml version="1.0" encoding="utf-8"?>' in head.lower()
+            and b'<moodle_backup>' in head and b'<information>' in head)
+
+
 class BackupTests(unittest.TestCase):
+    def test_detector_rejects_previous_declaration(self):
+        document = ET.Element('moodle_backup')
+        ET.SubElement(document, 'information').text = 'test'
+        old = ET.tostring(document, encoding='utf-8', xml_declaration=True)
+        self.assertFalse(moodle_detects_backup(old))
+        from build_mootimeter_backup import xml_bytes
+        self.assertTrue(moodle_detects_backup(xml_bytes(document)))
+
     def test_backups(self):
         paths = sorted(ROOT.glob('*.mbz'))
         self.assertEqual(len(paths), 2)
@@ -28,6 +47,7 @@ class BackupTests(unittest.TestCase):
                 documents = {name: ET.fromstring(archive.extractfile(name).read()) for name in members if name.endswith('.xml')}
                 for root in documents.values():
                     self.assertFalse(any(e.tag.endswith('_answers') or e.tag == 'user' for e in root.iter()))
+                self.assertTrue(moodle_detects_backup(archive.extractfile('moodle_backup.xml').read()))
                 manifest = documents['moodle_backup.xml']
                 source_settings = {s.findtext('name'): s.findtext('value') for s in manifest.findall('information/settings/setting')}
                 self.assertEqual(source_settings['users'], '0')

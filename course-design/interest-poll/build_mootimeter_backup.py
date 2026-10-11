@@ -21,7 +21,8 @@ TARGET_VERSION = '2025121100'  # Public v0.3.3, contains upstream 35c0379 restor
 
 def xml_bytes(root):
     ET.indent(root)
-    return ET.tostring(root, encoding='utf-8', xml_declaration=True) + b'\n'
+    # Moodle detect_moodle2_format matches the declaration literally.
+    return b'<?xml version="1.0" encoding="UTF-8"?>\n' + ET.tostring(root, encoding='utf-8') + b'\n'
 
 
 def add(parent, name, value):
@@ -114,7 +115,7 @@ def build(reference):
             if extension.tag.startswith('plugin_plagiarism_'):
                 module.remove(extension)  # No unrelated activity-specific plagiarism record.
         output[module_name] = xml_bytes(module)
-        filename = f'{slug}-poll-requires-mootimeter-0.3.3.mbz'
+        filename = f'{slug}-poll-requires-mootimeter-0.3.3-v2.mbz'
         manifest = copy.deepcopy(meta)
         manifest.find('information/name').text = filename
         manifest.find('information/contents/activities/activity/title').text = mt.findtext('name')
