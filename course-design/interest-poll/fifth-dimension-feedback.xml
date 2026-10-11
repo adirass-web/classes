@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FEEDBACK VERSION="200701" COMMENT="XML-Importfile for mod/feedback">
+  <ITEMS>
+    <ITEM TYPE="label" REQUIRED="0">
+      <ITEMID><![CDATA[1]]></ITEMID>
+      <ITEMTEXT><![CDATA[]]></ITEMTEXT>
+      <ITEMLABEL><![CDATA[]]></ITEMLABEL>
+      <PRESENTATION><![CDATA[<div dir="rtl" lang="he"><h3>סייבר ובינה מלאכותית — מה מסקרן אותנו, ומה מטריד?</h3><p>סייבר — הממד החמישי</p><p>לפני שנצא לדרך, נבדוק אילו שאלות אנחנו מביאים לכיתה. הסקר אנונימי וללא ציון. אין תשובות נכונות: מעניין אותנו מה אתם חושבים עכשיו. התייחסו לחיים האישיים, לעבודה בשירות המדינה או לחברה בכללותה.</p><p>בכל אחת מארבע השאלות הראשונות בחרו תשובה אחת. השאלה האחרונה היא לבחירה.</p></div>]]></PRESENTATION>
+      <OPTIONS><![CDATA[]]></OPTIONS>
+      <DEPENDITEM><![CDATA[0]]></DEPENDITEM>
+      <DEPENDVALUE><![CDATA[]]></DEPENDVALUE>
+    </ITEM>
+    <ITEM TYPE="multichoice" REQUIRED="1">
+      <ITEMID><![CDATA[2]]></ITEMID>
+      <ITEMTEXT><![CDATA[מה בסייבר הכי מעניין אותך להבין?]]></ITEMTEXT>
+      <ITEMLABEL><![CDATA[cyber_interest]]></ITEMLABEL>
+      <PRESENTATION><![CDATA[r>>>>>איך מתקפות מתרחשות, ואיך מתגוננים מפניהן.|איך אנשים מקבלים החלטות ונופלים להטעיות.|איך מגינים על מידע אישי ועל הפרטיות.|איך מתקפות משפיעות על שירותים ציבוריים ועל תפקוד המדינה.|איך מדינות משתמשות בסייבר לצורכי מודיעין, השפעה ועימות.|משהו אחר.|עדיין אין לי העדפה.<<<<<0]]></PRESENTATION>
+      <OPTIONS><![CDATA[h]]></OPTIONS>
+      <DEPENDITEM><![CDATA[0]]></DEPENDITEM>
+      <DEPENDVALUE><![CDATA[]]></DEPENDVALUE>
+    </ITEM>
+    <ITEM TYPE="multichoice" REQUIRED="1">
+      <ITEMID><![CDATA[3]]></ITEMID>
+      <ITEMTEXT><![CDATA[מה בסייבר הכי מטריד אותך?]]></ITEMTEXT>
+      <ITEMLABEL><![CDATA[cyber_concern]]></ITEMLABEL>
+      <PRESENTATION><![CDATA[r>>>>>גניבת כסף או השתלטות על חשבונות אישיים.|חשיפה ושימוש לרעה במידע אישי.|השבתת שירות ציבורי חיוני.|טעות שלי שעלולה לפגוע באחרים או בארגון.|שימוש בסייבר בעימותים בין מדינות.|משהו אחר.|כרגע אין נושא שמטריד אותי במיוחד.<<<<<0]]></PRESENTATION>
+      <OPTIONS><![CDATA[h]]></OPTIONS>
+      <DEPENDITEM><![CDATA[0]]></DEPENDITEM>
+      <DEPENDVALUE><![CDATA[]]></DEPENDVALUE>
+    </ITEM>
+    <ITEM TYPE="multichoice" REQUIRED="1">
+      <ITEMID><![CDATA[4]]></ITEMID>
+      <ITEMTEXT><![CDATA[מה בבינה מלאכותית הכי מעניין אותך להבין?]]></ITEMTEXT>
+      <ITEMLABEL><![CDATA[ai_interest]]></ITEMLABEL>
+      <PRESENTATION><![CDATA[r>>>>>איך היא פועלת, ומה היא באמת מסוגלת לעשות.|איך להשתמש בה ללמידה, למחקר וליצירה.|איך היא יכולה לשפר את העבודה ואת השירות לציבור.|איך היא משנה מקצועות ומיומנויות.|איך היא משנה את עולם הסייבר — בהתקפה ובהגנה.|משהו אחר.|עדיין אין לי העדפה.<<<<<0]]></PRESENTATION>
+      <OPTIONS><![CDATA[h]]></OPTIONS>
+      <DEPENDITEM><![CDATA[0]]></DEPENDITEM>
+      <DEPENDVALUE><![CDATA[]]></DEPENDVALUE>
+    </ITEM>
+    <ITEM TYPE="multichoice" REQUIRED="1">
+      <ITEMID><![CDATA[5]]></ITEMID>
+      <ITEMTEXT><![CDATA[מה בבינה מלאכותית הכי מטריד אותך?]]></ITEMTEXT>
+      <ITEMLABEL><![CDATA[ai_concern]]></ITEMLABEL>
+      <PRESENTATION><![CDATA[r>>>>>תשובות שגויות שנשמעות אמינות.|פגיעה בפרטיות ושימוש במידע שמסרנו.|התחזות וזיופים שקשה לזהות.|החלטות לא הוגנות שקשה להבין או לערער עליהן.|אובדן מיומנויות או פגיעה בתעסוקה.|משהו אחר.|כרגע אין נושא שמטריד אותי במיוחד.<<<<<0]]></PRESENTATION>
+      <OPTIONS><![CDATA[h]]></OPTIONS>
+      <DEPENDITEM><![CDATA[0]]></DEPENDITEM>
+      <DEPENDVALUE><![CDATA[]]></DEPENDVALUE>
+    </ITEM>
+    <ITEM TYPE="textarea" REQUIRED="0">
+      <ITEMID><![CDATA[6]]></ITEMID>
+      <ITEMTEXT><![CDATA[איזו שאלה אחת על סייבר או על בינה מלאכותית היית רוצה שנחקור בקורס? אפשר גם לפרט תשובת ״משהו אחר״. משפט אחד מספיק. השאלה אינה חובה; אין צורך לציין שם או מקום עבודה.]]></ITEMTEXT>
+      <ITEMLABEL><![CDATA[open_question]]></ITEMLABEL>
+      <PRESENTATION><![CDATA[50|3]]></PRESENTATION>
+      <OPTIONS><![CDATA[]]></OPTIONS>
+      <DEPENDITEM><![CDATA[0]]></DEPENDITEM>
+      <DEPENDVALUE><![CDATA[]]></DEPENDVALUE>
+    </ITEM>
+  </ITEMS>
+</FEEDBACK>

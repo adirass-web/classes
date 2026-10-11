@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>סקר פתיחה · סייבר — הממד החמישי</title>
+<style>
+:root { color-scheme: light; font-family: Arial, "Noto Sans Hebrew", sans-serif; color: #172f3a; background: #f2f6f7; }
+* { box-sizing: border-box; }
+body { margin: 0; line-height: 1.7; font-size: 17px; letter-spacing: normal; text-align: start; }
+main { max-inline-size: 900px; margin-inline: auto; padding: 1.2rem; }
+header { margin-block: 1rem 2rem; }
+h1 { font-size: clamp(1.6rem, 4vw, 2.3rem); line-height: 1.4; margin-block: .4rem; }
+h2 { font-size: 1.3rem; margin-block-start: 0; }
+section { background: white; border: 1px solid #cbd9df; border-radius: .8rem; padding: 1.4rem; margin-block: 1.4rem; }
+.settings { background: #edf4f5; border-inline-start: 4px solid #226778; padding: .8rem; }
+.copy-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .35rem .8rem; margin-block: 1.2rem; }
+label { grid-column: 1 / -1; font-weight: bold; }
+textarea { min-inline-size: 0; inline-size: 100%; resize: vertical; font: inherit; line-height: 1.6; padding: .6rem; border: 1px solid #8da6b2; border-radius: .35rem; color: inherit; background: white; }
+button { align-self: start; cursor: pointer; padding: .6rem .85rem; border: 1px solid #1e5868; border-radius: .35rem; font: inherit; background: #1e5868; color: white; }
+button:focus-visible, textarea:focus-visible, a:focus-visible { outline: 3px solid #ac6617; outline-offset: 3px; }
+a { color: #175970; text-underline-offset: .15em; }
+#status { position: sticky; inset-block-start: .5rem; background: #172f3a; color: white; padding: .65rem 1rem; border-radius: .35rem; z-index: 1; min-block-size: 3rem; }
+@media (max-width: 480px) { main { padding: .7rem; } section { padding: .9rem; } .copy-row { grid-template-columns: minmax(0, 1fr); } button { justify-self: start; } }
+@media print { button, #status { display: none; } section { break-inside: avoid; } textarea { border: none; } }
+</style>
+</head>
+<body>
+<main>
+<header>
+<p>סייבר — הממד החמישי · למרצה</p>
+<h1>סייבר ובינה מלאכותית<br>מה מסקרן אותנו, ומה מטריד?</h1>
+<p>דף הקמה ל־Mootimeter: הוסיפו ארבעה דפי Poll ודף Wordcloud לבחירה. העתיקו מכאן את השאלות ואת האפשרויות לשדות המתאימים, כל אפשרות בשדה נפרד.</p>
+<p>הפעילו מצב אנונימי בכל דף <strong>לפני הצבעת הבדיקה הראשונה</strong>. ההגדרה ננעלת לאחר קבלת תשובות. בדקו גם שהסטודנטים אינם רואים תוצאות עד שתחליטו לחשוף אותן.</p>
+<p>הדף הזה אינו אוסף תשובות ואינו יוצר פעילות באתר. הוא כולל את הטקסט המוכן וכפתורי העתקה. מדריך ההפעלה נמצא בקובץ README המצורף.</p>
+</header>
+<div id="status" role="status" aria-live="polite">בחרו ״העתקה״ ליד הטקסט הרצוי.</div>
+<section><h2>שם הפעילות והתיאור</h2>
+<div class="copy-row"><label for="copy-title">שם הפעילות</label><textarea id="copy-title" dir="auto" readonly rows="2">סייבר ובינה מלאכותית — מה מסקרן אותנו, ומה מטריד?</textarea><button type="button" data-copy="copy-title" aria-label="העתקת שם הפעילות">העתקה</button></div>
+<div class="copy-row"><label for="copy-intro">תיאור הפעילות</label><textarea id="copy-intro" dir="auto" readonly rows="2">סייבר — הממד החמישי
+לפני שנצא לדרך, נבדוק אילו שאלות אנחנו מביאים לכיתה. הסקר אנונימי וללא ציון. אין תשובות נכונות: מעניין אותנו מה אתם חושבים עכשיו. התייחסו לחיים האישיים, לעבודה בשירות המדינה או לחברה בכללותה.
+בכל אחת מארבע השאלות הראשונות אפשר לבחור עד שתי תשובות. אם בחרתם ״עדיין אין לי העדפה״ או ״כרגע אין נושא שמטריד אותי במיוחד״, בחרו באפשרות הזאת בלבד. השאלה האחרונה היא לבחירה.</textarea><button type="button" data-copy="copy-intro" aria-label="העתקת תיאור הפעילות">העתקה</button></div>
+</section>
+<section><h2>דף 1 · סקר (Poll)</h2>
+<p class="settings">מקסימום בחירות: <strong>2</strong> · מצב אנונימי: מופעל · תוצאות: מוסתרות עד סיום ההצבעה · תצוגה: תרשים פסים</p>
+<div class="copy-row"><label for="copy-q1">שאלה 1</label><textarea id="copy-q1" dir="auto" readonly rows="2">מה בסייבר הכי מעניין אותך להבין?</textarea><button type="button" data-copy="copy-q1" aria-label="העתקת שאלה 1">העתקה</button></div>
+<div class="copy-row"><label for="copy-q1a1">אפשרות 1</label><textarea id="copy-q1a1" dir="auto" readonly rows="2">איך מתקפות מתרחשות, ואיך מתגוננים מפניהן.</textarea><button type="button" data-copy="copy-q1a1" aria-label="העתקת אפשרות 1">העתקה</button></div>
+<div class="copy-row"><label for="copy-q1a2">אפשרות 2</label><textarea id="copy-q1a2" dir="auto" readonly rows="2">איך אנשים מקבלים החלטות ונופלים להטעיות.</textarea><button type="button" data-copy="copy-q1a2" aria-label="העתקת אפשרות 2">העתקה</button></div>
+<div class="copy-row"><label for="copy-q1a3">אפשרות 3</label><textarea id="copy-q1a3" dir="auto" readonly rows="2">איך מגינים על מידע אישי ועל הפרטיות.</textarea><button type="button" data-copy="copy-q1a3" aria-label="העתקת אפשרות 3">העתקה</button></div>
+<div class="copy-row"><label for="copy-q1a4">אפשרות 4</label><textarea id="copy-q1a4" dir="auto" readonly rows="2">איך מתקפות משפיעות על שירותים ציבוריים ועל תפקוד המדינה.</textarea><button type="button" data-copy="copy-q1a4" aria-label="העתקת אפשרות 4">העתקה</button></div>
+<div class="copy-row"><label for="copy-q1a5">אפשרות 5</label><textarea id="copy-q1a5" dir="auto" readonly rows="2">איך מדינות משתמשות בסייבר לצורכי מודיעין, השפעה ועימות.</textarea><button type="button" data-copy="copy-q1a5" aria-label="העתקת אפשרות 5">העתקה</button></div>
+<div class="copy-row"><label for="copy-q1a6">אפשרות 6</label><textarea id="copy-q1a6" dir="auto" readonly rows="2">משהו אחר.</textarea><button type="button" data-copy="copy-q1a6" aria-label="העתקת אפשרות 6">העתקה</button></div>
+<div class="copy-row"><label for="copy-q1a7">אפשרות 7</label><textarea id="copy-q1a7" dir="auto" readonly rows="2">עדיין אין לי העדפה.</textarea><button type="button" data-copy="copy-q1a7" aria-label="העתקת אפשרות 7">העתקה</button></div>
+</section>
+<section><h2>דף 2 · סקר (Poll)</h2>
+<p class="settings">מקסימום בחירות: <strong>2</strong> · מצב אנונימי: מופעל · תוצאות: מוסתרות עד סיום ההצבעה · תצוגה: תרשים פסים</p>
+<div class="copy-row"><label for="copy-q2">שאלה 2</label><textarea id="copy-q2" dir="auto" readonly rows="2">מה בסייבר הכי מטריד אותך?</textarea><button type="button" data-copy="copy-q2" aria-label="העתקת שאלה 2">העתקה</button></div>
+<div class="copy-row"><label for="copy-q2a1">אפשרות 1</label><textarea id="copy-q2a1" dir="auto" readonly rows="2">גניבת כסף או השתלטות על חשבונות אישיים.</textarea><button type="button" data-copy="copy-q2a1" aria-label="העתקת אפשרות 1">העתקה</button></div>
+<div class="copy-row"><label for="copy-q2a2">אפשרות 2</label><textarea id="copy-q2a2" dir="auto" readonly rows="2">חשיפה ושימוש לרעה במידע אישי.</textarea><button type="button" data-copy="copy-q2a2" aria-label="העתקת אפשרות 2">העתקה</button></div>
+<div class="copy-row"><label for="copy-q2a3">אפשרות 3</label><textarea id="copy-q2a3" dir="auto" readonly rows="2">השבתת שירות ציבורי חיוני.</textarea><button type="button" data-copy="copy-q2a3" aria-label="העתקת אפשרות 3">העתקה</button></div>
+<div class="copy-row"><label for="copy-q2a4">אפשרות 4</label><textarea id="copy-q2a4" dir="auto" readonly rows="2">טעות שלי שעלולה לפגוע באחרים או בארגון.</textarea><button type="button" data-copy="copy-q2a4" aria-label="העתקת אפשרות 4">העתקה</button></div>
+<div class="copy-row"><label for="copy-q2a5">אפשרות 5</label><textarea id="copy-q2a5" dir="auto" readonly rows="2">שימוש בסייבר בעימותים בין מדינות.</textarea><button type="button" data-copy="copy-q2a5" aria-label="העתקת אפשרות 5">העתקה</button></div>
+<div class="copy-row"><label for="copy-q2a6">אפשרות 6</label><textarea id="copy-q2a6" dir="auto" readonly rows="2">משהו אחר.</textarea><button type="button" data-copy="copy-q2a6" aria-label="העתקת אפשרות 6">העתקה</button></div>
+<div class="copy-row"><label for="copy-q2a7">אפשרות 7</label><textarea id="copy-q2a7" dir="auto" readonly rows="2">כרגע אין נושא שמטריד אותי במיוחד.</textarea><button type="button" data-copy="copy-q2a7" aria-label="העתקת אפשרות 7">העתקה</button></div>
+</section>
+<section><h2>דף 3 · סקר (Poll)</h2>
+<p class="settings">מקסימום בחירות: <strong>2</strong> · מצב אנונימי: מופעל · תוצאות: מוסתרות עד סיום ההצבעה · תצוגה: תרשים פסים</p>
+<div class="copy-row"><label for="copy-q3">שאלה 3</label><textarea id="copy-q3" dir="auto" readonly rows="2">מה בבינה מלאכותית הכי מעניין אותך להבין?</textarea><button type="button" data-copy="copy-q3" aria-label="העתקת שאלה 3">העתקה</button></div>
+<div class="copy-row"><label for="copy-q3a1">אפשרות 1</label><textarea id="copy-q3a1" dir="auto" readonly rows="2">איך היא פועלת, ומה היא באמת מסוגלת לעשות.</textarea><button type="button" data-copy="copy-q3a1" aria-label="העתקת אפשרות 1">העתקה</button></div>
+<div class="copy-row"><label for="copy-q3a2">אפשרות 2</label><textarea id="copy-q3a2" dir="auto" readonly rows="2">איך להשתמש בה ללמידה, למחקר וליצירה.</textarea><button type="button" data-copy="copy-q3a2" aria-label="העתקת אפשרות 2">העתקה</button></div>
+<div class="copy-row"><label for="copy-q3a3">אפשרות 3</label><textarea id="copy-q3a3" dir="auto" readonly rows="2">איך היא יכולה לשפר את העבודה ואת השירות לציבור.</textarea><button type="button" data-copy="copy-q3a3" aria-label="העתקת אפשרות 3">העתקה</button></div>
+<div class="copy-row"><label for="copy-q3a4">אפשרות 4</label><textarea id="copy-q3a4" dir="auto" readonly rows="2">איך היא משנה מקצועות ומיומנויות.</textarea><button type="button" data-copy="copy-q3a4" aria-label="העתקת אפשרות 4">העתקה</button></div>
+<div class="copy-row"><label for="copy-q3a5">אפשרות 5</label><textarea id="copy-q3a5" dir="auto" readonly rows="2">איך היא משנה את עולם הסייבר — בהתקפה ובהגנה.</textarea><button type="button" data-copy="copy-q3a5" aria-label="העתקת אפשרות 5">העתקה</button></div>
+<div class="copy-row"><label for="copy-q3a6">אפשרות 6</label><textarea id="copy-q3a6" dir="auto" readonly rows="2">משהו אחר.</textarea><button type="button" data-copy="copy-q3a6" aria-label="העתקת אפשרות 6">העתקה</button></div>
+<div class="copy-row"><label for="copy-q3a7">אפשרות 7</label><textarea id="copy-q3a7" dir="auto" readonly rows="2">עדיין אין לי העדפה.</textarea><button type="button" data-copy="copy-q3a7" aria-label="העתקת אפשרות 7">העתקה</button></div>
+</section>
+<section><h2>דף 4 · סקר (Poll)</h2>
+<p class="settings">מקסימום בחירות: <strong>2</strong> · מצב אנונימי: מופעל · תוצאות: מוסתרות עד סיום ההצבעה · תצוגה: תרשים פסים</p>
+<div class="copy-row"><label for="copy-q4">שאלה 4</label><textarea id="copy-q4" dir="auto" readonly rows="2">מה בבינה מלאכותית הכי מטריד אותך?</textarea><button type="button" data-copy="copy-q4" aria-label="העתקת שאלה 4">העתקה</button></div>
+<div class="copy-row"><label for="copy-q4a1">אפשרות 1</label><textarea id="copy-q4a1" dir="auto" readonly rows="2">תשובות שגויות שנשמעות אמינות.</textarea><button type="button" data-copy="copy-q4a1" aria-label="העתקת אפשרות 1">העתקה</button></div>
+<div class="copy-row"><label for="copy-q4a2">אפשרות 2</label><textarea id="copy-q4a2" dir="auto" readonly rows="2">פגיעה בפרטיות ושימוש במידע שמסרנו.</textarea><button type="button" data-copy="copy-q4a2" aria-label="העתקת אפשרות 2">העתקה</button></div>
+<div class="copy-row"><label for="copy-q4a3">אפשרות 3</label><textarea id="copy-q4a3" dir="auto" readonly rows="2">התחזות וזיופים שקשה לזהות.</textarea><button type="button" data-copy="copy-q4a3" aria-label="העתקת אפשרות 3">העתקה</button></div>
+<div class="copy-row"><label for="copy-q4a4">אפשרות 4</label><textarea id="copy-q4a4" dir="auto" readonly rows="2">החלטות לא הוגנות שקשה להבין או לערער עליהן.</textarea><button type="button" data-copy="copy-q4a4" aria-label="העתקת אפשרות 4">העתקה</button></div>
+<div class="copy-row"><label for="copy-q4a5">אפשרות 5</label><textarea id="copy-q4a5" dir="auto" readonly rows="2">אובדן מיומנויות או פגיעה בתעסוקה.</textarea><button type="button" data-copy="copy-q4a5" aria-label="העתקת אפשרות 5">העתקה</button></div>
+<div class="copy-row"><label for="copy-q4a6">אפשרות 6</label><textarea id="copy-q4a6" dir="auto" readonly rows="2">משהו אחר.</textarea><button type="button" data-copy="copy-q4a6" aria-label="העתקת אפשרות 6">העתקה</button></div>
+<div class="copy-row"><label for="copy-q4a7">אפשרות 7</label><textarea id="copy-q4a7" dir="auto" readonly rows="2">כרגע אין נושא שמטריד אותי במיוחד.</textarea><button type="button" data-copy="copy-q4a7" aria-label="העתקת אפשרות 7">העתקה</button></div>
+</section>
+<section><h2>דף 5 · שאלה פתוחה לבחירה (Wordcloud)</h2>
+<p class="settings">מקסימום תשובות למשתתף: <strong>1</strong> · מצב אנונימי: מופעל · תשובות: מוסתרות מהסטודנטים</p>
+<div class="copy-row"><label for="copy-open">השאלה הפתוחה</label><textarea id="copy-open" dir="auto" readonly rows="2">איזו שאלה אחת על סייבר או על בינה מלאכותית היית רוצה שנחקור בקורס? אפשר גם לפרט תשובת ״משהו אחר״. משפט אחד מספיק. השאלה אינה חובה; אין צורך לציין שם או מקום עבודה. עד 150 תווים.</textarea><button type="button" data-copy="copy-open" aria-label="העתקת השאלה הפתוחה">העתקה</button></div>
+<p>משפט קצר אחד. את התשובות קוראים בתצוגת סקירת התשובות; אין צורך להקרין ענן מילים.</p></section>
+<footer><p>הפעלה בכיתה: 3 דקות להצבעה, 2 דקות לתוצאות, 3 דקות לשיחה בזוגות ו־2 דקות לאיסוף. הפעילות ללא ציון.</p></footer>
+</main>
+<script>
+document.addEventListener('click', async (event) => {
+    const button = event.target.closest('button[data-copy]');
+    if (!button) return;
+    const field = document.getElementById(button.dataset.copy);
+    const status = document.getElementById('status');
+    try {
+        if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error('Clipboard unavailable');
+        await navigator.clipboard.writeText(field.value);
+        status.textContent = 'הטקסט הועתק. אפשר להדביק בשדה המתאים ב־Mootimeter.';
+    } catch (error) {
+        field.focus();
+        field.select();
+        status.textContent = 'הטקסט סומן. העתיקו באמצעות Ctrl+C או ⌘C והדביקו ב־Mootimeter.';
+    }
+});
+</script>
+</body>
+</html>

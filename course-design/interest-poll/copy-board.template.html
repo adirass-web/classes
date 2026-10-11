@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>סקר פתיחה · {{COURSE}}</title>
+<style>
+:root { color-scheme: light; font-family: Arial, "Noto Sans Hebrew", sans-serif; color: #172f3a; background: #f2f6f7; }
+* { box-sizing: border-box; }
+body { margin: 0; line-height: 1.7; font-size: 17px; letter-spacing: normal; text-align: start; }
+main { max-inline-size: 900px; margin-inline: auto; padding: 1.2rem; }
+header { margin-block: 1rem 2rem; }
+h1 { font-size: clamp(1.6rem, 4vw, 2.3rem); line-height: 1.4; margin-block: .4rem; }
+h2 { font-size: 1.3rem; margin-block-start: 0; }
+section { background: white; border: 1px solid #cbd9df; border-radius: .8rem; padding: 1.4rem; margin-block: 1.4rem; }
+.settings { background: #edf4f5; border-inline-start: 4px solid #226778; padding: .8rem; }
+.copy-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .35rem .8rem; margin-block: 1.2rem; }
+label { grid-column: 1 / -1; font-weight: bold; }
+textarea { min-inline-size: 0; inline-size: 100%; resize: vertical; font: inherit; line-height: 1.6; padding: .6rem; border: 1px solid #8da6b2; border-radius: .35rem; color: inherit; background: white; }
+button { align-self: start; cursor: pointer; padding: .6rem .85rem; border: 1px solid #1e5868; border-radius: .35rem; font: inherit; background: #1e5868; color: white; }
+button:focus-visible, textarea:focus-visible, a:focus-visible { outline: 3px solid #ac6617; outline-offset: 3px; }
+a { color: #175970; text-underline-offset: .15em; }
+#status { position: sticky; inset-block-start: .5rem; background: #172f3a; color: white; padding: .65rem 1rem; border-radius: .35rem; z-index: 1; min-block-size: 3rem; }
+@media (max-width: 480px) { main { padding: .7rem; } section { padding: .9rem; } .copy-row { grid-template-columns: minmax(0, 1fr); } button { justify-self: start; } }
+@media print { button, #status { display: none; } section { break-inside: avoid; } textarea { border: none; } }
+</style>
+</head>
+<body>
+<main>
+<header>
+<p>{{COURSE}} · למרצה</p>
+<h1>סייבר ובינה מלאכותית<br>מה מסקרן אותנו, ומה מטריד?</h1>
+<p>דף הקמה ל־Mootimeter: הוסיפו ארבעה דפי Poll ודף Wordcloud לבחירה. העתיקו מכאן את השאלות ואת האפשרויות לשדות המתאימים, כל אפשרות בשדה נפרד.</p>
+<p>הפעילו מצב אנונימי בכל דף <strong>לפני הצבעת הבדיקה הראשונה</strong>. ההגדרה ננעלת לאחר קבלת תשובות. בדקו גם שהסטודנטים אינם רואים תוצאות עד שתחליטו לחשוף אותן.</p>
+<p>הדף הזה אינו אוסף תשובות ואינו יוצר פעילות באתר. הוא כולל את הטקסט המוכן וכפתורי העתקה. מדריך ההפעלה נמצא בקובץ README המצורף.</p>
+</header>
+<div id="status" role="status" aria-live="polite">בחרו ״העתקה״ ליד הטקסט הרצוי.</div>
+{{PANELS}}
+<footer><p>הפעלה בכיתה: 3 דקות להצבעה, 2 דקות לתוצאות, 3 דקות לשיחה בזוגות ו־2 דקות לאיסוף. הפעילות ללא ציון.</p></footer>
+</main>
+<script>
+document.addEventListener('click', async (event) => {
+    const button = event.target.closest('button[data-copy]');
+    if (!button) return;
+    const field = document.getElementById(button.dataset.copy);
+    const status = document.getElementById('status');
+    try {
+        if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error('Clipboard unavailable');
+        await navigator.clipboard.writeText(field.value);
+        status.textContent = 'הטקסט הועתק. אפשר להדביק בשדה המתאים ב־Mootimeter.';
+    } catch (error) {
+        field.focus();
+        field.select();
+        status.textContent = 'הטקסט סומן. העתיקו באמצעות Ctrl+C או ⌘C והדביקו ב־Mootimeter.';
+    }
+});
+</script>
+</body>
+</html>
