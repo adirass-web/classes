@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<preset>
+  <description>היכרות אקדמית לעובדי שירות המדינה — סייבר — הממד החמישי. כרטיס אישי ותגובה לעמית, ללא ציון.</description>
+  <settings>
+    <intro>&lt;div class="cyber-acq" dir="rtl" lang="he"&gt;
+&lt;h2&gt;מי אנחנו, ומה אנחנו מביאים ללמידה?&lt;/h2&gt;
+&lt;p class="acq-meta"&gt;סייבר — הממד החמישי · פעילות היכרות · כ־13 דקות · ללא ציון&lt;/p&gt;
+&lt;p&gt;כולנו עובדים בשירות המדינה, בתפקידים שונים ועם רקע לימודי מגוון. לפני שנתחיל, נכיר את האנשים ואת נקודות המבט שנמצאות בכיתה.&lt;/p&gt;
+&lt;ol&gt;&lt;li&gt;&lt;strong&gt;כותבים — כ־6 דקות:&lt;/strong&gt; הוסיפו כרטיס אישי קצר, כ־100–130 מילים בסך הכול.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;מכירים — כ־4 דקות:&lt;/strong&gt; קראו כמה כרטיסים ובחרו עמית או עמיתה מתחום עבודה או מרקע לימודי שונה. פתחו את הכרטיס והוסיפו תגובה.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;משתפים — כ־3 דקות:&lt;/strong&gt; נאסוף במליאה חיבורים ושאלות מעניינות שעלו.&lt;/li&gt;&lt;/ol&gt;
+&lt;div class="acq-note"&gt;&lt;p&gt;הכרטיס והתגובות גלויים למשתתפי הקורס. שתפו פרטים שנוח לכם לפרסם בכיתה; אפשר לתאר את מקום העבודה באופן כללי.&lt;/p&gt;
+&lt;p&gt;אין צורך בידע קודם בסייבר. הרקע הלימודי שלכם הוא נקודת מוצא לשיחה וללמידה.&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;</intro>
+    <comments>1</comments>
+    <requiredentries>0</requiredentries>
+    <requiredentriestoview>0</requiredentriestoview>
+    <maxentries>1</maxentries>
+    <rssarticles>0</rssarticles>
+    <approval>0</approval>
+    <defaultsortdir>0</defaultsortdir>
+    <defaultsort>שם</defaultsort>
+  </settings>
+  <field>
+    <type>text</type>
+    <name>שם</name>
+    <description>השם שבו תרצו שנפנה אליכם.</description>
+    <required>1</required>
+    <param1>0</param1>
+  </field>
+  <field>
+    <type>text</type>
+    <name>מקום העבודה</name>
+    <description>משרד, גוף או תחום שירות — ברמת הפירוט שמתאימה לכם. אפשר להישאר בתיאור כללי.</description>
+    <required>1</required>
+    <param1>0</param1>
+  </field>
+  <field>
+    <type>textarea</type>
+    <name>העיסוק שלי</name>
+    <description>משפט בשפה שמי שעובד במקום אחר יוכל להבין, מעבר לשם התפקיד.</description>
+    <required>1</required>
+    <param1>0</param1>
+    <param2>45</param2>
+    <param3>3</param3>
+    <param4>1</param4>
+    <param5>0</param5>
+  </field>
+  <field>
+    <type>textarea</type>
+    <name>לימודים קודמים</name>
+    <description>ציינו קורס אחד או שניים, או תחומי לימוד, שעזרו לכם לחשוב על יחסים בינלאומיים, מדינה, ביטחון, אסטרטגיה או מחקר. אלה דוגמאות, לא דרישות קדם. אפשר לכתוב שלא למדתם קורס קשור.</description>
+    <required>1</required>
+    <param1>0</param1>
+    <param2>45</param2>
+    <param3>3</param3>
+    <param4>1</param4>
+    <param5>0</param5>
+  </field>
+  <field>
+    <type>textarea</type>
+    <name>רעיון שנשאר איתי</name>
+    <description>מושג, שאלה או הבחנה מהלימודים הקודמים, והסבר קצר במילים שלכם. אם אין לכם רעיון כזה, כתבו על נושא שהייתם רוצים להבין.</description>
+    <required>1</required>
+    <param1>0</param1>
+    <param2>45</param2>
+    <param3>3</param3>
+    <param4>1</param4>
+    <param5>0</param5>
+  </field>
+  <field>
+    <type>textarea</type>
+    <name>שאלה לקורס</name>
+    <description>שאלה אחת שהייתם רוצים לבדוק בקורס, בעקבות הלימודים, החיים או העבודה.</description>
+    <required>1</required>
+    <param1>0</param1>
+    <param2>45</param2>
+    <param3>3</param3>
+    <param4>1</param4>
+    <param5>0</param5>
+  </field>
+  <field>
+    <type>textarea</type>
+    <name>מחוץ לעבודה</name>
+    <description>משהו שאתם אוהבים ללמוד או לעשות מחוץ לעבודה, ושנוח לכם לשתף. אפשר להשאיר ריק.</description>
+    <required>0</required>
+    <param1>0</param1>
+    <param2>45</param2>
+    <param3>3</param3>
+    <param4>1</param4>
+    <param5>0</param5>
+  </field>
+</preset>
