@@ -1,0 +1,15 @@
+{
+  "courses": 2,
+  "slots_per_course": 24,
+  "existing_items_catalogued": 72,
+  "minutes": 90,
+  "strong_student_target_minutes": 45,
+  "resources": "closed book; no network",
+  "single_best_answer": true,
+  "difficulty_forecast_per_course": {
+    "3": 14,
+    "4": 8,
+    "5": 2
+  },
+  "notice": "Planning checks only. No final items, keys, independent content review or timing pilot completed."
+}
